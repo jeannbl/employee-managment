@@ -1,0 +1,22 @@
+{
+    "employees": [
+        {
+            "id": 1,
+            "name": "daniel fernandez",
+            "email": "daniel.fernandezgp@gmail.com",
+            "cellphone": "74112253",
+            "address": "villa mexico",
+            "code": 123456,
+            "status": true
+        },
+        {
+            "id": 2,
+            "name": "Jeannet Merida",
+            "email": "jeann.merida@gmail.com",
+            "cellphone": "77554552",
+            "address": "Barrio Magisterio",
+            "code": 1238452,
+            "status": false
+        }
+    ]
+}
