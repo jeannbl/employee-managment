@@ -1,1 +1,30 @@
-<p>employee-list works!</p>
+<div class="">
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Cellphone</th>
+                    <th>Address</th>
+                    <th>Code</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of employees">
+                    <td>{{employee.id}}</td>
+                    <td>{{employee.name}}</td>
+                    <td>{{employee.email}}</td>
+                    <td>{{employee.cellphone}}</td>
+                    <td>{{employee.address}}</td>
+                    <td>{{employee.code}}</td>
+                    <td>{{employee.status}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
