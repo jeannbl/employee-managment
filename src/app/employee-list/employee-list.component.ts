@@ -19,7 +19,10 @@ export class EmployeeListComponent implements OnInit {
   loadEmployees() {
     return this.empRestApi.getEmployees().subscribe((data: {}) => {
       this.employees = data;
-      console.log(data);
-    })
+    });
+  }
+
+  removeEmployee(id: number) {
+    console.log(id);
   }
 }

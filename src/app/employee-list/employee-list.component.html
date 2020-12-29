@@ -10,6 +10,7 @@
                     <th>Address</th>
                     <th>Code</th>
                     <th>Status</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -21,6 +22,10 @@
                     <td>{{employee.address}}</td>
                     <td>{{employee.code}}</td>
                     <td>{{employee.status}}</td>
+                    <td>
+                        <span  class="btn btn-link" routerLink="/employee-detail/{{employee.id}}">Detail</span> | 
+                        <button (click)="removeEmployee(employee.id)" class="btn btn-warning">Delete</button>
+                    </td>
                 </tr>
             </tbody>
         </table>

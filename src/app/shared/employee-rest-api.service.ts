@@ -12,7 +12,9 @@ export class EmployeeRestApiService {
   apiURL = 'http://localhost:3000/';
 
   httpOptions = {
-    headers: new HttpHeaders({})
+    headers: new HttpHeaders({
+      'Content-type' : 'application/json'
+    })
   }
 
   constructor(private http: HttpClient) { }
@@ -26,13 +28,22 @@ export class EmployeeRestApiService {
   }
   
   createEmployee(employee: Employee): Observable<Employee> {
+    employee.id = Math.floor(Math.random() * 100);
+    employee.status = true;
     const employeeData = JSON.stringify(employee);
-    console.log(employeeData);
     return this.http.post<Employee>(this.apiURL + 'employees', employeeData, this.httpOptions)
     .pipe(
       retry(1),
       catchError(this.handleError)
     );
+  }
+
+  getEmployeeById(id: number): Observable<Employee> {
+    return this.http.get<Employee>(this.apiURL + 'employees/'+ id)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
   }
 
   handleError(fail: any) {
