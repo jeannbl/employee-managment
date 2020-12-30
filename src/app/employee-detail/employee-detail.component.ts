@@ -9,9 +9,15 @@ import { EmployeeRestApiService } from '../shared/employee-rest-api.service';
   styleUrls: ['./employee-detail.component.css']
 })
 export class EmployeeDetailComponent implements OnInit {
-
   employeeId: number;
-  employee: Employee;
+  employee: Employee = {
+    name: '',
+    email: '',
+    cellphone: '',
+    address: '',
+    code: 0,
+    status: false
+  };
 
   constructor(private activatedRoute: ActivatedRoute, 
               private employeeApi: EmployeeRestApiService) { }
